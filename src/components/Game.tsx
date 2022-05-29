@@ -1,3 +1,4 @@
+import { createContext } from "react";
 import { useBoard } from "../hooks/useBoard";
 import { BoardHandlers } from '../interfaces/BoardHandlers'
 
@@ -8,6 +9,9 @@ interface BoardProps {
 }
 
 
+export const GameContext = createContext<BoardHandlers>({} as BoardHandlers);
+const { Provider } = GameContext;
+
 export const Game = ({initialBoard = Array(9).fill(''), firstPlayer, children}: BoardProps) => {
 
   const board = useBoard({ initialBoard, firstPlayer });
@@ -15,10 +19,10 @@ export const Game = ({initialBoard = Array(9).fill(''), firstPlayer, children}: 
 
   return (
 
-    <div className="">
+    <Provider value={{...board}}>
       {
         children({...board})
       }
-    </div> 
+    </Provider>
   )
 }

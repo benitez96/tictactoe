@@ -23,7 +23,7 @@ export const useBoard = ({initialBoard, firstPlayer}: Props): BoardHandlers => {
 
     setBoard(prev => {
       prev[i] = player
-      return [...prev]
+      return prev.slice()
     })
 
     setPlayer(prev => prev === 'o' ? 'x' : 'o')

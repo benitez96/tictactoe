@@ -8,11 +8,11 @@ import {
 
 import { Board } from './components/Board'
 import { Cell } from './components/Cell'
-import {Footer} from './components/Footer';
+import { Footer } from './components/Footer';
 import { Game } from './components/Game'
-import {Header} from './components/Header';
-import {ResetButton} from './components/ResetButton';
-import {ScoreBoard} from './components/ScoreBoard'
+import { Header } from './components/Header';
+import { ResetButton } from './components/ResetButton';
+import { ScoreBoard } from './components/ScoreBoard'
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
             game => (
               <>
                 <div className="mt-4 mb-4 grid place-content-center grid-cols-3 gap-4" >
-                  <div className="flex items-end p-1 ml-2 text-lg">
+                  <div className="flex items-center p-1 ml-2 text-xl">
                     <BsRecordCircleFill className="text-emerald-500" />
                     <ImCross className="text-purple-600" />
                   </div>
