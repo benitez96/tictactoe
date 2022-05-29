@@ -46,6 +46,7 @@ export const useBoard = ({initialBoard, firstPlayer}: Props): BoardHandlers => {
     for (const combo of combinations) {
       const [a, b, c] = combo
       if (board[a] !== '' && board[a] === board[b] && board[a] === board[c]){
+          //@ts-ignore
           setScore( prev => ({ ...prev, [board[a]]: prev[board[a]] + 1 }))
           setTimeout(() => setBoard(initialBoard), 500)
           return
